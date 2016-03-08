@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="DataSubset Download Sample Report - Rule" a:uuid="ef00570b-e1ce-4bcd-b567-a586cd77e82d">
+        <a:description>A sample report for the DataSubset Download Application which displays two links to download data to an excel spreadsheet.</a:description>
+        <a:uiExpr>=#&quot;8fc295bf-9173-4c3a-b5d0-98b397433968&quot;()</a:uiExpr>
+        <a:urlStub>PY8jhA</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>SYSTEM_GROUP_ROLE_DESIGNERS</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>
