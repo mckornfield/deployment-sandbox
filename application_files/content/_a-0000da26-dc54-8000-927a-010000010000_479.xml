@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>DSD_allPrimitiveTypesWithPaging</name>
+        <uuid>_a-0000da26-dc54-8000-927a-010000010000_479</uuid>
+        <description>Rule that creates an ExportableDataSubset to be displayed on a grid, bar chart, and line graph</description>
+        <parentUuid>_a-0000da1d-93a6-8000-9e06-010000010000_661</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=with(
+    'type!{urn:appian:plugin:datasubsetdownload:types}ExportableDataSubset'(
+      filename: &quot;Exported Data&quot;,
+      fieldNames: {
+        &quot;id&quot;,
+        &quot;int&quot;,
+        &quot;text&quot;,
+        &quot;double&quot;,
+        &quot;bool&quot;,
+        &quot;date&quot;,
+        &quot;datetime&quot;,
+        &quot;time&quot;,
+        &quot;cdt&quot;,
+        &quot;nestedCDT&quot;
+      },
+      fieldLabels: {
+        &quot;ID&quot;,        
+        &quot;Integer&quot;,
+        &quot;Text&quot;,
+        &quot;Decimal&quot;,
+        &quot;Boolean&quot;,
+        &quot;Date&quot;,
+        &quot;Date and Time&quot;,
+        &quot;Time&quot;,
+        &quot;CDT&quot;,
+        &quot;Nested CDT&quot;
+      },
+      datasubset: if(ri!input = 1, #&quot;666410eb-ac68-47d3-bb5d-a633eeaabadd&quot;(#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: ri!startIndex, batchSize: ri!batchSize)), if(ri!input = 2, #&quot;aae7d8cc-e169-479e-930d-9f91929a04c6&quot;(true, #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: ri!startIndex, batchSize: ri!batchSize)), if(ri!input = 3, #&quot;aae7d8cc-e169-479e-930d-9f91929a04c6&quot;(false, #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: ri!startIndex, batchSize: ri!batchSize)), {})))
+    )
+  )</definition>
+        <namedTypedValue>
+            <name>input</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>startIndex</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>batchSize</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
