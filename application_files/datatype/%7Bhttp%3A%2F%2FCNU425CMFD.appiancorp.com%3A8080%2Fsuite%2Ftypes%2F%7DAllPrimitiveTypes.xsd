@@ -31,4 +31,4 @@
       <xsd:element name="nestedCDT" nillable="true" type="tns:Retailer"/>
     </xsd:sequence>
   </xsd:complexType>
-</xsd:schema> 
+</xsd:schema>

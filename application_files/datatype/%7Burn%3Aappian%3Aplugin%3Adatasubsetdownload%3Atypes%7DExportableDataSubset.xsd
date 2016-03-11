@@ -11,4 +11,4 @@
       <xsd:element minOccurs="0" name="filename" type="xsd:string"/>
     </xsd:sequence>
   </xsd:complexType>
-</xsd:schema> 
+</xsd:schema>
