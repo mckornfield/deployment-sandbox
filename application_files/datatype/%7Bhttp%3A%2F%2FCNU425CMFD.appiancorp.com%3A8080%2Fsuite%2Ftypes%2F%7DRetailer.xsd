@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+  targetNamespace="http://CNU425CMFD.appiancorp.com:8080/suite/types/"
+  xmlns:tns="http://CNU425CMFD.appiancorp.com:8080/suite/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="%7Bhttp%3A%2F%2FCNU425CMFD.appiancorp.com%3A8080%2Fsuite%2Ftypes%2F%7DProduct.xsd"/>
+  <xsd:complexType name="Retailer">
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">
+					@Column(nullable=false)
+					@Id
+					@GeneratedValue
+				</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" nillable="true" type="xsd:string"/>
+      <xsd:element name="product" nillable="true" type="tns:Product"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

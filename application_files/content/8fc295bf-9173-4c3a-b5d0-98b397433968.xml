@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>DSD_dataSubsetReportDashboardRule</name>
+        <uuid>8fc295bf-9173-4c3a-b5d0-98b397433968</uuid>
+        <description>The main dashboard for the Datasubset Download Application sample report (via rule)</description>
+        <parentUuid>_a-0000da1d-93a6-8000-9e06-010000010000_661</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+  local!boolFilter: 1,
+with(
+  local!ruleURI: getdatasubsetdownloadlinkfromrule(#&quot;_a-0000da1d-93a6-8000-9e06-010000010000_662&quot;, local!boolFilter),
+  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+    firstColumnContents: {
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        firstColumnContents: {
+          #&quot;SYSTEM_SYSRULES_radioButtonField&quot;(
+            label: &quot;Select what data to show: &quot;,
+            choiceLabels: {&quot;All Data&quot;, &quot;Only rows with boolean column = true&quot;, &quot;Only rows with boolean column = false&quot;},
+            choiceValues: {1, 2 ,3},
+            value: local!boolFilter,
+            saveInto: local!boolFilter
+          )
+        },
+        secondColumnContents: {
+          if(isNull(local!ruleURI),
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            readOnly: true,
+            value: &quot;Unable to export data to Excel at this time.&quot;
+          ),
+          #&quot;SYSTEM_SYSRULES_linkField&quot;(
+            links: #&quot;SYSTEM_SYSRULES_safeLink&quot;(
+              label: &quot;Click here to export this data to Excel.&quot;,
+              uri: local!ruleURI
+            )
+          ))
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        firstColumnContents: {
+          #&quot;2101d50d-cebb-4762-b7fe-93e4911570c0&quot;(local!boolFilter)
+        },
+        secondColumnContents: {
+          #&quot;77a33371-551e-41cd-ae0d-de7482ef956d&quot;(local!boolFilter)
+        }
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        firstColumnContents:{
+          #&quot;d7248325-1e7b-4772-8987-a8b01cbcef99&quot;(local!boolFilter),
+        }
+      )
+    }
+  )
+)
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
