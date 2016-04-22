@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types"
+  xmlns:types1="urn:com:appian:types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="Case_and_Username_VW">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">
+			@Table(name="Case_and_Username_VW")
+		</xsd:appinfo>
+      <xsd:documentation><![CDATA[Represents view CASE_AND_USERNAME_VW]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CaseID" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CaseField1" nillable="true" type="xsd:string"/>
+      <xsd:element name="CaseField2" nillable="true" type="xsd:string"/>
+      <xsd:element name="Username" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

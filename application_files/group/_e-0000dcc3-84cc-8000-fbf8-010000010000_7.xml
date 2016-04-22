@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <group>
+        <name>Case All Business Users</name>
+        <securityMap>SECURITYMAP_PUBLIC</securityMap>
+        <uuid>_e-0000dcc3-84cc-8000-fbf8-010000010000_7</uuid>
+        <groupTypeUuid>SYSTEM_GROUP_TYPE_CUSTOM</groupTypeUuid>
+        <description>Contains all business users for the Case example record type. </description>
+        <delegatedCreation>false</delegatedCreation>
+        <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
+        <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
+        <attributes/>
+    </group>
+    <members>
+        <users>
+            <userUuid>testUser1</userUuid>
+        </users>
+        <groups>
+            <groupUuid>_e-0000dcc3-84cc-8000-fbf8-010000010000_8</groupUuid>
+        </groups>
+    </members>
+    <admins>
+        <users>
+            <userUuid>Administrator</userUuid>
+        </users>
+        <groups/>
+    </admins>
+    <ruleSet/>
+</groupHaul>

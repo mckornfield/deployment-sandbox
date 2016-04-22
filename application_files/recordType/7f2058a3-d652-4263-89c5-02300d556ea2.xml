@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <recordType name="Case" a:uuid="7f2058a3-d652-4263-89c5-02300d556ea2">
+        <a:pluralName>Cases</a:pluralName>
+        <a:description>A grid style list view of records called &quot;Cases&quot; which implements record level security.</a:description>
+        <a:urlStub>SfzIfg</a:urlStub>
+        <a:source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:DataStoreEntity" a:uuid="b9b1dc8b-138f-49ce-8eac-ff3fb90e501e@_a-0000dcc3-84da-8000-fbfa-010000010000_773"/>
+        <a:listViewTemplateExpr>#&quot;SYSTEM_SYSRULES_listViewItem&quot;(
+  title: &quot;Case: &quot; &amp; rf!CaseID &amp; &quot; | &quot; &amp; rf!CaseField1,
+  details: &quot;Case Field 2: &quot; &amp; rf!CaseField2
+)</a:listViewTemplateExpr>
+        <a:detailViewCfg>
+            <a:nameExpr>=&quot;Summary&quot;</a:nameExpr>
+            <a:uiExpr>=#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+firstColumnContents: {
+#&quot;SYSTEM_SYSRULES_textField&quot;(
+ label: &quot;Case ID&quot;,
+ labelPosition: &quot;ADJACENT&quot;,
+ value: rp!id,
+ readOnly: true
+)
+}
+)</a:uiExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:urlStub>summary</a:urlStub>
+            <a:headerExpr></a:headerExpr>
+        </a:detailViewCfg>
+        <a:defaultFilter>
+            <a:field>Username</a:field>
+            <a:operator>=</a:operator>
+            <a:valueExpression>if(isusermemberofgroup(loggedInUser(),#&quot;_a-0000dcc3-84da-8000-fbfa-010000010000_801&quot;),
+#&quot;_a-0000dcc3-84da-8000-fbfa-010000010000_770&quot;,
+loggedInUser()
+)</a:valueExpression>
+        </a:defaultFilter>
+        <a:defaultSortInfo>
+            <field>CaseID</field>
+            <ascending>true</ascending>
+        </a:defaultSortInfo>
+        <a:isSystem>false</a:isSystem>
+        <a:dataSrcExpr></a:dataSrcExpr>
+        <a:facetsListExpr></a:facetsListExpr>
+        <a:defaultFiltersExpr></a:defaultFiltersExpr>
+        <a:security>16383</a:security>
+    </recordType>
+    <roleMap>
+        <role name="record_type_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dcc3-84cc-8000-fbf8-010000010000_7</groupUuid>
+            </groups>
+        </role>
+        <role name="record_type_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000dcc3-84cc-8000-fbf8-010000010000_9</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</recordTypeHaul>
