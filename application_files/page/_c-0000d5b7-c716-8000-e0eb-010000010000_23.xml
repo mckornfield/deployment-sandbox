@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pageHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <page>
+        <name>Create Users</name>
+        <description></description>
+        <public>true</public>
+        <type>0</type>
+        <url></url>
+        <template>portal.template.home.1</template>
+        <zoneCount>1</zoneCount>
+        <approvalRequired>false</approvalRequired>
+        <uuid>_c-0000d5b7-c716-8000-e0eb-010000010000_23</uuid>
+        <portlets>
+            <item zone="0" index="0">_d-0000d9c0-94f9-8000-14fa-010000010000_4</item>
+            <item zone="0" index="1">_d-0000d5b7-c716-8000-e0eb-010000010000_16</item>
+        </portlets>
+    </page>
+    <roleMap>
+        <role name="editor">
+            <users/>
+            <groups/>
+        </role>
+        <role name="admin">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role name="approver">
+            <users/>
+            <groups/>
+        </role>
+        <role name="viewer">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</pageHaul>
