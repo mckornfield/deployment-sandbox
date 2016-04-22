@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <queryRule>
+        <name>DSD_getAllPrimitiveByBool</name>
+        <uuid>aae7d8cc-e169-479e-930d-9f91929a04c6</uuid>
+        <description>Returns all AllPrimitiveTypes CDT instances with the specified boolean value</description>
+        <folderUuid>_a-0000da1d-93a6-8000-9e06-010000010000_661</folderUuid>
+        <dataStoreEntityCompositeUuid>ac0772aa-91f5-4c71-be1f-8ceb4d44dc69@_a-0000da26-ca61-8000-9e06-010000010000_725</dataStoreEntityCompositeUuid>
+        <params>
+            <param>
+                <description></description>
+                <name>bool</name>
+                <type>{http://www.w3.org/2001/XMLSchema}boolean</type>
+            </param>
+        </params>
+        <filters>
+            <filter>
+                <field>
+                    <name>bool</name>
+                    <type>{http://www.w3.org/2001/XMLSchema}boolean</type>
+                </field>
+                <op>=</op>
+                <value>bool</value>
+                <valueType>PARAMETER</valueType>
+            </filter>
+        </filters>
+        <orderings/>
+    </queryRule>
+    <roleMap public="false">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
