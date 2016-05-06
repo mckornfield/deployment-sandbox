@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <queryRule>
+        <name>DSD_getAllPrimitiveTypes</name>
+        <uuid>666410eb-ac68-47d3-bb5d-a633eeaabadd</uuid>
+        <description>Returns all AllPrimitiveTypes CDT instances</description>
+        <folderUuid>_a-0000da1d-93a6-8000-9e06-010000010000_661</folderUuid>
+        <dataStoreEntityCompositeUuid>ac0772aa-91f5-4c71-be1f-8ceb4d44dc69@_a-0000da26-ca61-8000-9e06-010000010000_725</dataStoreEntityCompositeUuid>
+        <params/>
+        <filters/>
+        <orderings/>
+    </queryRule>
+    <roleMap public="false">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
