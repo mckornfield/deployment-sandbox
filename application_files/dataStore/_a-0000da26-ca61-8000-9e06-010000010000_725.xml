@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <dataStore>
+        <uuid>_a-0000da26-ca61-8000-9e06-010000010000_725</uuid>
+        <name>DSD_DS</name>
+        <description>Main data store for the DataSubset Download Application</description>
+        <dataSourceKey>jdbc/AppianAnywhere</dataSourceKey>
+        <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
+        <entities>
+            <entity>
+                <uuid>08916176-0448-49b5-b73c-0af84dfd8769</uuid>
+                <name>product</name>
+                <type>{http://CNU425CMFD.appiancorp.com:8080/suite/types/}Product</type>
+            </entity>
+            <entity>
+                <uuid>c2838d93-fbd2-4ba7-be9d-71012a30961e</uuid>
+                <name>retailer</name>
+                <type>{http://CNU425CMFD.appiancorp.com:8080/suite/types/}Retailer</type>
+            </entity>
+            <entity>
+                <uuid>ac0772aa-91f5-4c71-be1f-8ceb4d44dc69</uuid>
+                <name>allprimitivetypes</name>
+                <type>{http://CNU425CMFD.appiancorp.com:8080/suite/types/}AllPrimitiveTypes</type>
+            </entity>
+        </entities>
+    </dataStore>
+    <isPublished>true</isPublished>
+    <roleMap>
+        <role allowForAll="false" inherit="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</dataStoreHaul>
