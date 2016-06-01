@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>DSD_gridDashboard</name>
+        <uuid>d7248325-1e7b-4772-8987-a8b01cbcef99</uuid>
+        <description>A grid for the DataSubset Download Application sample report</description>
+        <parentUuid>_a-0000da1d-93a6-8000-9e06-010000010000_661</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+    startIndex: 1,
+    batchSize: 5,
+    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
+      field: &quot;int&quot;,
+      ascending: true
+    )
+  ),
+  with(
+    local!datasubset: #&quot;_a-0000da26-dc54-8000-927a-010000010000_479&quot;(ri!bool, local!pagingInfo.startIndex, local!pagingInfo.batchSize).datasubset,
+    #&quot;SYSTEM_SYSRULES_gridField&quot;(
+      totalCount: local!datasubset.totalCount,
+      columns: {
+        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+          label: &quot;Integer&quot;,
+          field: &quot;int&quot;,
+          data: index(local!datasubset.data, &quot;int&quot;, null)
+        ),
+        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+          label: &quot;Text&quot;,
+          field: &quot;text&quot;,
+          data: index(local!datasubset.data, &quot;text&quot;, null)
+        ),
+        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+          label: &quot;Decimal&quot;,
+          field: &quot;double&quot;,
+          data: index(local!datasubset.data, &quot;double&quot;, null)
+        ),
+        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+          label: &quot;Boolean&quot;,
+          field: &quot;bool&quot;,
+          data: index(local!datasubset.data, &quot;bool&quot;, null)
+        ),
+        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+          label: &quot;Date&quot;,
+          field: &quot;date&quot;,
+          data: index(local!datasubset.data, &quot;date&quot;, null)
+        ),
+        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+          label: &quot;Date and Time&quot;,
+          field: &quot;datetime&quot;,
+          data: index(local!datasubset.data, &quot;datetime&quot;, null)
+        ),
+        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+          label: &quot;Time&quot;,
+          field: &quot;time&quot;,
+          data: index(local!datasubset.data, &quot;time&quot;, null)
+        )
+      },
+      value: local!pagingInfo,
+      saveInto: local!pagingInfo
+    )
+  )
+)
+</definition>
+        <namedTypedValue>
+            <name>bool</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
