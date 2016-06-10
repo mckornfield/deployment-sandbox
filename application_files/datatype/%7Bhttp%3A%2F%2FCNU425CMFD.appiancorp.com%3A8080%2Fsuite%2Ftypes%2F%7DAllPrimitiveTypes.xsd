@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+  targetNamespace="http://CNU425CMFD.appiancorp.com:8080/suite/types/"
+  xmlns:tns="http://CNU425CMFD.appiancorp.com:8080/suite/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="%7Bhttp%3A%2F%2FCNU425CMFD.appiancorp.com%3A8080%2Fsuite%2Ftypes%2F%7DProduct.xsd"/>
+  <xsd:include schemaLocation="%7Bhttp%3A%2F%2FCNU425CMFD.appiancorp.com%3A8080%2Fsuite%2Ftypes%2F%7DRetailer.xsd"/>
+  <xsd:complexType name="AllPrimitiveTypes">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">
+        @Table(name="AllPrimitiveTypes")
+      </xsd:appinfo>
+      <xsd:documentation><![CDATA[all primitive appian types including cdt and nested cdt]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">
+            @Id
+            @GeneratedValue
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="bool" nillable="true" type="xsd:boolean"/>
+      <xsd:element name="date" nillable="true" type="xsd:date"/>
+      <xsd:element name="datetime" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="double" nillable="true" type="xsd:double"/>
+      <xsd:element name="int" nillable="true" type="xsd:int"/>
+      <xsd:element name="text" nillable="true" type="xsd:string"/>
+      <xsd:element name="time" nillable="true" type="xsd:time"/>
+      <xsd:element name="cdt" nillable="true" type="tns:Product"/>
+      <xsd:element name="nestedCDT" nillable="true" type="tns:Retailer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
