@@ -18,4 +18,4 @@
       <xsd:element name="product" nillable="true" type="tns:Product"/>
     </xsd:sequence>
   </xsd:complexType>
-</xsd:schema>
+</xsd:schema> 
